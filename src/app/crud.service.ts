@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,10 @@ export class CrudService {
     return this.client.get(this.url); //always return 'Observable' datatype
   }
 
-  GetCourses() {
+  GetCourses(): Observable<any> {
     return this.client.get(this.url1);
   }
-  
+
   AddCourse(course: any) {
     return this.client.post(
       this.url1,
